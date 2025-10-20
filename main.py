@@ -1,4 +1,7 @@
 import random
+from colorama import init, Fore, Back, Style
+
+init(autoreset=True)
 
 board_size = 5
 board = []
@@ -40,7 +43,7 @@ def show_board(board):
     for i in range(len(board)):
         print (i+1, end="  ")
         for j in range(len(board)):
-            print("*" if board[i][j] else "-", end="  ")
+            print(Fore.YELLOW + Style.BRIGHT + "*" if board[i][j] else Fore.WHITE + Style.DIM + "*", end="  ")
         print()
 
 def switch_points(board, x, y):
